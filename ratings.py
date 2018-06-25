@@ -1,3 +1,4 @@
+import sys
 """Restaurant rating lister."""
 
 
@@ -18,9 +19,12 @@ def gets_restaurant_ratings(text_file):
 
 def alphabetized_restaurant_ratings(restaurant_ratings_dictionary):
     """Alphabetizes restaurant ratings dictionary"""
-    for restaurant_name in sorted(restaurant_ratings_dictionary):
-        print(f"{restaurant_name} is rated at {restaurant_ratings_dictionary[restaurant_name]}.")
+    for name, rating in sorted(restaurant_ratings_dictionary.items()):
+        print(f"{name} is rated at {rating}.")
 
+
+file_name = sys.argv[0]
+text_file = sys.argv[1]
 
 restaurant_ratings_dictionary = gets_restaurant_ratings('scores.txt')
 alphabetized_restaurant_ratings(restaurant_ratings_dictionary)
