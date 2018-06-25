@@ -18,8 +18,9 @@ def gets_restaurant_ratings(text_file):
 
 def alphabetized_restaurant_ratings(restaurant_ratings_dictionary):
     """Alphabetizes restaurant ratings dictionary"""
+    for restaurant_name, rating in sorted(restaurant_ratings_dictionary):
+        print(f"{restaurant_name} is rated at {rating}.")
 
 
-
-
-print(gets_restaurant_ratings('scores.txt'))
+restaurant_ratings_dictionary = gets_restaurant_ratings('scores.txt')
+alphabetized_restaurant_ratings(restaurant_ratings_dictionary)
