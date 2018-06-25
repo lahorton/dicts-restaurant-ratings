@@ -11,15 +11,15 @@ def gets_restaurant_ratings(text_file):
         restaurant_name, rating = line
         restaurant_ratings_dictionary[restaurant_name] = rating
 
-    text_file.close()
+    file.close()
 
     return restaurant_ratings_dictionary
 
 
 def alphabetized_restaurant_ratings(restaurant_ratings_dictionary):
     """Alphabetizes restaurant ratings dictionary"""
-    for restaurant_name, rating in sorted(restaurant_ratings_dictionary):
-        print(f"{restaurant_name} is rated at {rating}.")
+    for restaurant_name in sorted(restaurant_ratings_dictionary):
+        print(f"{restaurant_name} is rated at {restaurant_ratings_dictionary[restaurant_name]}.")
 
 
 restaurant_ratings_dictionary = gets_restaurant_ratings('scores.txt')
